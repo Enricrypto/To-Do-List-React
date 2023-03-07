@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Task = ({todoList, setTodoList}) => {
+const Task = ({addTask}) => {
 
     const [task, setTask] = useState('');
 
@@ -10,14 +10,14 @@ const Task = ({todoList, setTodoList}) => {
 
 	const handleKeyDown = (event) => {
 		if (event.keyCode === 13) {
-			setTodoList([...todoList, task])
-			event.target.value = '';
+			addTask(task);
+			setTask('');
 		};
 	};
 
     return (
         <div className="d-flex flex-column align-items-center mt-2">
-            <input className="todo-input" type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
+            <input defaultValue = {task} className="todo-input" type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
         </div>
     )
 };
