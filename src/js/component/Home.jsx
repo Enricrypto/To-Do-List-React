@@ -11,7 +11,8 @@ const Home = () => {
 	};
 
 	const todo = (item) => {
-		setTodoList(todoList.filter((elem, index) => index !== item))
+		setTodoList(todoList.filter((elem, index) => {
+		return index !== item})); 
 	}
 
 	return (
@@ -20,7 +21,7 @@ const Home = () => {
 			<Task addTask = {addTask}/>
 			{todoList.length ? 
 			<div className="card p-5 mt-2 d-flex justify-content-center">
-				<Todo todoList={todoList} todo={todo}/>
+				<Todo todoList={todoList} todo={todo} />
 			</div>
 			:
 			<div className="d-flex flex-column align-items-center">"No tasks, add a task"</div>}

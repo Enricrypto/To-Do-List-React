@@ -10,7 +10,7 @@ const Todo = ({ todoList, todo }) => {
                 <div className="card-body d-flex justify-content-around align-items-center" onMouseEnter={() => { setShowButton(true) }} onMouseLeave={() => { setShowButton(false) }}>
                     <h5 className="card-title">{elem}</h5>
                     {showButton &&
-                        <button className="btn btn-danger" onClick={todo}>Delete</button>
+                        <button className="btn btn-danger" onClick={()=> todo(index)}>Delete</button>
                     }
                 </div>
             </div>)}

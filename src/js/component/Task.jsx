@@ -5,7 +5,7 @@ const Task = ({addTask}) => {
     const [task, setTask] = useState('');
 
     const handleChange = (event) => {
-		setTask(event.target.value);
+		setTask(event.target.value)
 	};
 
 	const handleKeyDown = (event) => {
@@ -14,10 +14,9 @@ const Task = ({addTask}) => {
 			setTask('');
 		};
 	};
-
     return (
         <div className="d-flex flex-column align-items-center mt-2">
-            <input defaultValue = {task} className="todo-input" type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
+            <input value = {task} className="todo-input" type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
         </div>
     )
 };
